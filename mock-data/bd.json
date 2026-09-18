@@ -1,0 +1,24 @@
+{
+    "alunos": [
+        {
+            "nome": "Pedro",
+            "apelido": "Silva",
+            "idCurso": 1,
+            "anoCurricular": 3
+        },
+        {
+            "nome": "Maria",
+            "apelido": "Ferreira",
+            "idCurso": 1,
+            "anoCurricular": 2
+        }
+    ],
+    "cursos": [
+        {
+            "nomeDoCurso": "Engenharia Informática"
+        },
+        {
+            "nomeDoCurso": "Engenharia da Computação Gráfica e Multimédia"
+        }
+    ]
+}

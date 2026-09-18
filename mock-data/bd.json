@@ -1,24 +1,29 @@
 {
-    "alunos": [
-        {
-            "nome": "Pedro",
-            "apelido": "Silva",
-            "idCurso": 1,
-            "anoCurricular": 3
-        },
-        {
-            "nome": "Maria",
-            "apelido": "Ferreira",
-            "idCurso": 1,
-            "anoCurricular": 2
-        }
-    ],
-    "cursos": [
-        {
-            "nomeDoCurso": "Engenharia Informática"
-        },
-        {
-            "nomeDoCurso": "Engenharia da Computação Gráfica e Multimédia"
-        }
-    ]
+  "alunos": [
+    {
+      "nome": "Pedro",
+      "apelido": "Silva",
+      "idCurso": 1,
+      "anoCurricular": 3,
+      "id": "7XJo3blmaAk"
+    },
+    {
+      "nome": "Maria",
+      "apelido": "Ferreira",
+      "idCurso": 1,
+      "anoCurricular": 2,
+      "id": "fEJh7FNXa8I"
+    }
+  ],
+  "cursos": [
+    {
+      "nomeDoCurso": "Engenharia Informática",
+      "id": "Pm-PE8oGR_c"
+    },
+    {
+      "nomeDoCurso": "Engenharia da Computação Gráfica e Multimédia",
+      "id": "oWJuVVMTYmI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

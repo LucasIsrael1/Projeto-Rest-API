@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background: #c4c1c5;
+}
+
+main {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px #707070 solid;
+}
+
+.card h2 {
+    margin: 0.8rem 0;
+}
+
+button {
+    color: white;
+    border-radius: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.btn-criar {
+    background: #26c72e;
+    border: 1px #244932 solid;
+}
+
+.btn-editar {
+    background: #3fa7ec;
+    border: 1px #26243f solid;
+}
+
+.btn-excluir {
+    background: #e70712;
+    border: 1px #3f2426 solid;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: 3em 1fr;
+    gap: 0.5rem 1rem;
+}
+
+.campos input {
+    width: 100%;
+    box-sizing: border-box;
+}

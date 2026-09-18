@@ -3,15 +3,15 @@
     {
       "nome": "Pedro",
       "apelido": "Silva",
-      "idCurso": 1,
-      "anoCurricular": 3,
+      "idCurso": "1",
+      "anoCurricular": "3",
       "id": "7XJo3blmaAk"
     },
     {
       "nome": "Maria",
       "apelido": "Ferreira",
-      "idCurso": 1,
-      "anoCurricular": 2,
+      "idCurso": "1",
+      "anoCurricular": "2",
       "id": "fEJh7FNXa8I"
     }
   ],

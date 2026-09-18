@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="style.css">
+
+        <title>Alunos</title>
+    </head>
+    <body>
+        <main>
+            <h1>Alunos</h1>
+
+            <div class="grid">
+                <form class="card" id="criar-aluno">
+                    <h2>Criar aluno</h2>
+                    <div class="campos">
+                        <label for="criar-nome">Nome:</label>
+                        <input type="text" id="criar-nome">
+                        <label for="criar-apelido">Apelido:</label>
+                        <input type="text" id="criar-apelido">
+                        <label for="criar-curso">Curso:</label>
+                        <input type="number" id="criar-curso">
+                        <label for="criar-ano">Ano:</label>
+                        <input type="number" id="criar-ano">
+                    </div>
+                    <p>
+                        <button class="btn-criar" type="submit">Criar</button>
+                    </p>
+                </form>
+
+                <form class="card" id="editar-aluno" hidden>
+                    <h2>Editar aluno</h2>
+                    <div class="campos">
+                        <label for="editar-nome">Nome:</label>
+                        <input type="text" id="editar-nome">
+                        <label for="editar-apelido">Apelido:</label>
+                        <input type="text" id="editar-apelido">
+                        <label for="editar-curso">Curso:</label>
+                        <input type="number" id="editar-curso">
+                        <label for="editar-ano">Ano:</label>
+                        <input type="number" id="editar-ano">
+                    </div>
+                    <p>
+                        <button class="btn-criar" type="submit">Guardar</button>
+                    </p>
+                </form>
+            </div>
+
+            <div id="alunos" class="grid"></div>
+        </main>
+
+        <script src="main.js"></script>
+    </body>
+</html>

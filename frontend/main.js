@@ -16,8 +16,8 @@ async function carregarAlunos() {
                 <p>Curso: ${aluno.idCurso}</p>
                 <p>Ano: ${aluno.anoCurricular}</p>
                 <p>
-                    <button class="btn-editar" onclick="selecionarAluno('${aluno.id}')">Editar</button>
-                    <button class="btn-excluir" onclick="excluirAluno('${aluno.id}')">Excluir</button>
+                    <button class="btn-editar" onclick="selecionarAluno('${aluno._id}')">Editar</button>
+                    <button class="btn-excluir" onclick="excluirAluno('${aluno._id}')">Excluir</button>
                 </p>
             </div>
         `
@@ -39,6 +39,7 @@ formularioCriacao.addEventListener('submit', async (event) => {
     };
     await fetch(url, {
         method: 'POST',
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(aluno)
     });
 
@@ -52,8 +53,7 @@ const formularioEdicao = document.getElementById('editar-aluno');
 let dadosEdicao = undefined;
 
 function selecionarAluno(id) {
-
-    dadosEdicao = alunos.find(aluno => aluno.id === id);
+    dadosEdicao = alunos.find(aluno => aluno._id === id);
     if (dadosEdicao === undefined) return;
 
     formularioEdicao.hidden = false;
@@ -71,11 +71,12 @@ formularioEdicao.addEventListener('submit', async (event) => {
     const aluno = {
         nome: document.getElementById('editar-nome').value,
         apelido: document.getElementById('editar-apelido').value,
-        idCurso: document.getElementById('editar-curso').value,
-        anoCurricular: document.getElementById('editar-ano').value,
+        idCurso: Number(document.getElementById('editar-curso').value),
+        anoCurricular: Number(document.getElementById('editar-ano').value),
     };
-    await fetch(url + '/' + dadosEdicao.id, {
+    await fetch(url + '/' + dadosEdicao._id, {
         method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(aluno)
     });
     formularioEdicao.hidden = true;

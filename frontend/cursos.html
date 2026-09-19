@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="style.css">
+
+        <title>Cursos</title>
+    </head>
+    <body>
+        <main>
+            <h1>Cursos</h1>
+
+            <p><a href="index.html">Ver alunos</a></p>
+
+            <div class="grid">
+                <form class="card" id="criar-curso">
+                    <h2>Criar curso</h2>
+                    <div class="campos">
+                        <label for="criar-nome">Nome:</label>
+                        <input type="text" id="criar-nome">
+                    </div>
+                    <p>
+                        <button class="btn-criar" type="submit">Criar</button>
+                    </p>
+                </form>
+
+                <form class="card" id="editar-curso" hidden>
+                    <h2>Editar curso</h2>
+                    <div class="campos">
+                        <label for="editar-nome">Nome:</label>
+                        <input type="text" id="editar-nome">
+                    </div>
+                    <p>
+                        <button class="btn-criar" type="submit">Guardar</button>
+                    </p>
+                </form>
+            </div>
+
+            <div id="cursos" class="grid"></div>
+        </main>
+
+        <script src="cursos.js"></script>
+    </body>
+</html>

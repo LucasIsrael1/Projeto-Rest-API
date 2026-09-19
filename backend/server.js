@@ -4,12 +4,14 @@ const dotenv = require('dotenv');
 const cors = require("cors");
 
 const rotaAlunos = require('./routes/alunos');
+const rotaCursos = require('./routes/cursos');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 app.use('/alunos', rotaAlunos);
+app.use('/cursos', rotaCursos);
 
 dotenv.config();
 

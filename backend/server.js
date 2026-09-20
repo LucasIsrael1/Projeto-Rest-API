@@ -2,9 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require("cors");
+const swaggerUI = require("swagger-ui-express");
 
 const rotaAlunos = require('./routes/alunos');
 const rotaCursos = require('./routes/cursos');
+
+const swaggerSpec = require("./docs/docs");
 
 const app = express();
 
@@ -12,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/alunos', rotaAlunos);
 app.use('/cursos', rotaCursos);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 dotenv.config();
 

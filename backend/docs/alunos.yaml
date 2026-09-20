@@ -1,0 +1,126 @@
+components:
+    schemas:
+        Aluno:
+            type: object
+            required:
+                [nome, apelido, idCurso, anoCurricular]
+            properties:
+                _id:
+                    type: string
+                    description: Identificador gerado automaticamente
+                    readOnly: true
+                nome:
+                    type: string
+                    description: Primeiro nome do aluno
+                apelido:
+                    type: string
+                    description: Apelido do aluno
+                idCurso:
+                    type: number
+                    description: ID do curso a qual o aluno está inscrito
+                anoCurricular:
+                    type: number
+                    description: Ano curricular atual do aluno
+
+tags:
+    name: Alunos
+    description: API para gerir alunos
+
+/alunos:
+    get:
+        summary: Exibe todos os alunos
+        tags: [Alunos]
+        responses:
+            200: 
+                description: Devolve a lista de alunos
+                content:
+                    application/json:
+                        schema: {type: array, items: {$ref: '#/components/schemas/Aluno'}}
+            500:
+                description: Erro interno do servidor
+    post:
+        summary: Regista um novo aluno
+        tags: [Alunos]
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema: {$ref: '#/components/schemas/Aluno'}
+        responses:
+            201: 
+                description: Devolve o aluno criado
+                content:
+                    application/json:
+                        schema: {$ref: '#/components/schemas/Aluno'}
+            400:
+                description: Dados de aluno inválidos
+            500:
+                description: Erro interno do servidor
+
+/alunos/{id}:
+    get:
+        summary: Obtém aluno por ID
+        tags: [Alunos]
+        parameters:
+        -   in: path
+            name: id
+            required: true
+            schema: {type: string}
+            description: ID do aluno
+        responses:
+            200: 
+                description: Devolve o aluno encontrado
+                content:
+                    application/json:
+                        schema: {$ref: '#/components/schemas/Aluno'}
+            404:
+                description: O aluno não foi encontrado
+            500:
+                description: Erro interno do servidor
+
+    put:
+        summary: Modifica os dados de um aluno
+        tags: [Alunos]
+        parameters:
+        -   in: path
+            name: id
+            required: true
+            schema: {type: string}
+            description: ID do aluno
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema: {$ref: '#/components/schemas/Aluno'}
+        responses:
+            200: 
+                description: Devolve os dados do aluno após a modificação
+                content:
+                    application/json:
+                        schema: {$ref: '#/components/schemas/Aluno'}
+            400:
+                description: Dados de aluno inválidos
+            404:
+                description: O aluno não foi encontrado
+            500:
+                description: Erro interno do servidor
+
+    delete:
+        summary: Exclui um aluno do registo
+        tags: [Alunos]
+        parameters:
+        -   in: path
+            name: id
+            required: true
+            schema: {type: string}
+            description: ID do aluno
+        responses:
+            200: 
+                description: Devolve os dados do aluno excluído
+                content:
+                    application/json:
+                        schema: {$ref: '#/components/schemas/Aluno'}
+            404:
+                description: O aluno não foi encontrado
+            500:
+                description: Erro interno do servidor

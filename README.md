@@ -1,5 +1,7 @@
 # Projeto Rest API
 
+Lucas Israel | nº 33454
+
 Este repositório contém o projeto desenvolvido para a atividade prática de Sistemas de Informação em Redes, referente à implementação de uma API Restful.
 
 ## Deploy
@@ -15,3 +17,7 @@ https://projeto-rest-api-frontend.onrender.com
 https://projeto-rest-api.onrender.com
 - https://projeto-rest-api.onrender.com/alunos
 - https://projeto-rest-api.onrender.com/cursos
+
+### Documentação
+
+https://projeto-rest-api.onrender.com/api-docs/

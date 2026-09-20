@@ -5,7 +5,7 @@ const options = {
         openapi: '3.0.0',
         servers: [
             {
-                url: 'http://localhost:3000/',
+                url: 'https://projeto-rest-api.onrender.com/',
             },
         ],
     },

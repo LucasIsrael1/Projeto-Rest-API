@@ -1,0 +1,117 @@
+components:
+    schemas:
+        Curso:
+            type: object
+            required:
+                [nomeDoCurso]
+            properties:
+                _id:
+                    type: string
+                    description: Identificador gerado automaticamente
+                    readOnly: true
+                nomeDoCurso:
+                    type: string
+                    description: O nome do curso
+
+tags:
+    name: Cursos
+    description: API para gerir cursos
+
+/cursos:
+    get:
+        summary: Exibe todos os cursos
+        tags: [Cursos]
+        responses:
+            200: 
+                description: Devolve a lista de cursos
+                content:
+                    application/json:
+                        schema: {type: array, items: {$ref: '#/components/schemas/Curso'}}
+            500:
+                description: Erro interno do servidor
+    post:
+        summary: Regista um novo curso
+        tags: [Cursos]
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema: {$ref: '#/components/schemas/Curso'}
+        responses:
+            201: 
+                description: Devolve o curso criado
+                content:
+                    application/json:
+                        schema: {$ref: '#/components/schemas/Curso'}
+            400:
+                description: Dados de curso inválidos
+            500:
+                description: Erro interno do servidor
+
+/cursos/{id}:
+    get:
+        summary: Obtém curso por ID
+        tags: [Cursos]
+        parameters:
+        -   in: path
+            name: id
+            required: true
+            schema: {type: string}
+            description: ID do curso
+        responses:
+            200: 
+                description: Devolve o curso encontrado
+                content:
+                    application/json:
+                        schema: {$ref: '#/components/schemas/Curso'}
+            404:
+                description: O curso não foi encontrado
+            500:
+                description: Erro interno do servidor
+
+    put:
+        summary: Modifica os dados de um curso
+        tags: [Cursos]
+        parameters:
+        -   in: path
+            name: id
+            required: true
+            schema: {type: string}
+            description: ID do curso
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema: {$ref: '#/components/schemas/Curso'}
+        responses:
+            200: 
+                description: Devolve os dados do curso após a modificação
+                content:
+                    application/json:
+                        schema: {$ref: '#/components/schemas/Curso'}
+            400:
+                description: Dados de curso inválidos
+            404:
+                description: O curso não foi encontrado
+            500:
+                description: Erro interno do servidor
+
+    delete:
+        summary: Exclui um curso do registo
+        tags: [Cursos]
+        parameters:
+        -   in: path
+            name: id
+            required: true
+            schema: {type: string}
+            description: ID do curso
+        responses:
+            200: 
+                description: Devolve os dados do curso excluído
+                content:
+                    application/json:
+                        schema: {$ref: '#/components/schemas/Curso'}
+            404:
+                description: O curso não foi encontrado
+            500:
+                description: Erro interno do servidor

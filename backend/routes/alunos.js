@@ -8,7 +8,7 @@ const router = express.Router();
 const schema = new mongoose.Schema({
     nome: {type: String, required: true},
     apelido: {type: String, required: true},
-    idCurso: {type: Number, required: true},
+    idCurso: {type: String, required: true},
     anoCurricular: {type: Number, required: true},
 });
 const alunos = mongoose.model('alunos', schema);

@@ -34,7 +34,7 @@ formularioCriacao.addEventListener('submit', async (event) => {
     const aluno = {
         nome: document.getElementById('criar-nome').value,
         apelido: document.getElementById('criar-apelido').value,
-        idCurso: Number(document.getElementById('criar-curso').value),
+        idCurso: document.getElementById('criar-curso').value,
         anoCurricular: Number(document.getElementById('criar-ano').value),
     };
     await fetch(url, {
@@ -71,7 +71,7 @@ formularioEdicao.addEventListener('submit', async (event) => {
     const aluno = {
         nome: document.getElementById('editar-nome').value,
         apelido: document.getElementById('editar-apelido').value,
-        idCurso: Number(document.getElementById('editar-curso').value),
+        idCurso: document.getElementById('editar-curso').value,
         anoCurricular: Number(document.getElementById('editar-ano').value),
     };
     await fetch(url + '/' + dadosEdicao._id, {

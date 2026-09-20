@@ -16,7 +16,7 @@ components:
                     type: string
                     description: Apelido do aluno
                 idCurso:
-                    type: number
+                    type: string
                     description: ID do curso a qual o aluno está inscrito
                 anoCurricular:
                     type: number
